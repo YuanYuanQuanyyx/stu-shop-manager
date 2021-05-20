@@ -10,11 +10,11 @@ import { mainRoutes } from './routes';
 ReactDOM.render(
   <Router>
     <Switch>
-      <Redirect to='/login' from='/' />
       <Route path='/users' render={routeProps =><App {...routeProps} />} />
       {mainRoutes.map(route => {
         return <Route key={route.path} {...route} />;
       })}
+      <Redirect to='/login' from='/' />
       <Redirect to='/404'/>
     </Switch>
   </Router>,
