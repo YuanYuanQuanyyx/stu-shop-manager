@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form, Icon, Input, Button, Card, message } from 'antd';
 import './admin.css'
-import { getOpt_uuid } from '../../utils/auth'
+import { getOtp_uuid } from '../../utils/auth'
 import QRcode from './twoAuth.png'
 import { loginApi } from '../../services/auth';
 import { setToken } from '../../utils/auth';
@@ -18,7 +18,7 @@ function Admin(props) {
             if (!err) {
                 var data = {
                     "args":{
-                        "otp_uuid": getOpt_uuid(),
+                        "otp_uuid": getOtp_uuid(),
                         "otp": values.pin
                     }
                 }

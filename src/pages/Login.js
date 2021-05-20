@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Icon, Input, Button, Checkbox, Card, message } from 'antd';
 import './login.css';
 import { loginApi } from '../services/auth';
-import { setToken, setOpt_uuid } from '../utils/auth';
+import { setToken, setOtp_uuid } from '../utils/auth';
 
 function Login(props) {
 
@@ -23,8 +23,8 @@ function Login(props) {
                 .then((res) => {
                     console.log(res);
                     if (res.status === 200) {
-                        if (res.data.result.opt_uuid) {
-                            setOpt_uuid(res.data.result.opt_uuid)
+                        if (res.data.result.otp_uuid) {
+                            setOtp_uuid(res.data.result.otp_uuid)
                             props.history.push('/users/admin')
                         } else if (res.data.result.token) {
                             setToken(res.data.result.token)
